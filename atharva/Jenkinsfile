@@ -12,17 +12,18 @@ pipeline {
         }
  
         stage('Build') {
-            steps {
-                echo 'Building project'
-                bat 'mvn -f seljen\\pom.xml clean compile'
-            }
-        }
- 
-        stage('Run Selenium Tests') {
-            steps {
-                echo 'Running Selenium tests'
-                bat 'mvn -f atharva\\pom.xml test'
-            }
-        }
+    steps {
+        echo 'Building project'
+        bat 'mvn clean compile'
+    }
+}
+
+stage('Run Selenium Tests') {
+    steps {
+        echo 'Running Selenium tests'
+        bat 'mvn test'
+    }
+}
+
     }
 }

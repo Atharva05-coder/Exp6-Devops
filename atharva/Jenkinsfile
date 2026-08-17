@@ -21,8 +21,7 @@ pipeline {
         stage('Run Selenium Tests') {
             steps {
                 echo 'Running Selenium tests'
-                bat 'mvn test'
-            }
+                bat 'mvn -f atharva//pom.xml test'
         }
     }
 }

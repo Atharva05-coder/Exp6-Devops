@@ -14,14 +14,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building project'
-                bat 'mvn -f atharva//pom.xml clean compile'
+                bat '"C:\\Users\\athar\\Downloads\\apache-maven-3.9.16-bin\\apache-maven-3.9.16\\bin\\mvn.cmd" -f atharva\\pom.xml clean compile'
             }
         }
  
         stage('Run Selenium Tests') {
             steps {
                 echo 'Running Selenium tests'
-                bat 'mvn -f atharva//pom.xml test'
+                bat '"C:\\Users\\athar\\Downloads\\apache-maven-3.9.16-bin\\apache-maven-3.9.16\\bin\\mvn.cmd" -f atharva\\pom.xml clean compile'
         }
     }
 }

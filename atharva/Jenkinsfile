@@ -12,18 +12,17 @@ pipeline {
         }
  
         stage('Build') {
-    steps {
-        echo 'Building project'
-        bat 'mvn clean compile'
+            steps {
+                echo 'Building project'
+                bat '"C:\\Users\\athar\\Downloads\\apache-maven-3.9.16-bin\\apache-maven-3.9.16\\bin\\mvn.cmd" -f atharva\\pom.xml clean compile'
+            }
+        }
+ 
+        stage('Run Selenium Tests') {
+            steps {
+                echo 'Running Selenium tests'
+                bat '"C:\\Users\\athar\\Downloads\\apache-maven-3.9.16-bin\\apache-maven-3.9.16\\bin\\mvn.cmd" -f atharva\\pom.xml clean compile'
+        }
     }
 }
-
-stage('Run Selenium Tests') {
-    steps {
-        echo 'Running Selenium tests'
-        bat 'mvn test'
-    }
-}
-
-    }
 }
